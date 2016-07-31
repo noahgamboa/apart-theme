@@ -1,5 +1,6 @@
 <?php
 require_once("../../../wp-load.php");
+require_once("./.env.php");
 $name = $_POST["name"];
 $email = $_POST["email"];
 $phone = $_POST["phone"];
@@ -14,7 +15,7 @@ die('Could not connect: '.mysql_error());
 } 
 
 $url = 'https://www.google.com/recaptcha/api/siteverify';
-$secret = '6LdOBiUTAAAAAJOPTXT6n_uozywQcmsFfoDa1z2G';
+//$secret = '6LdOBiUTAAAAAJOPTXT6n_uozywQcmsFfoDa1z2G';
 $fields = array(
             'secret'=>urlencode($secret),
             'response'=>urlencode($captcha_response)
