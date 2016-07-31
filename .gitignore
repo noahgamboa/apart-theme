@@ -1,1 +1,3 @@
 .env.php
+.DS_store
+.sass-cache
