@@ -1,0 +1,447 @@
+/*
+ * Globals
+ */
+
+
+* { box-sizing: border-box; }
+
+body, html {
+    width: 100%;
+    // height: 100%;
+    margin: 0;
+}
+@import 'globals';
+@import 'form';
+
+body {
+    font-family: "gothamlight", Georgia, "Times New Roman", Times, serif;
+    color: #555;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    margin-top: 0;
+    font-family: "neutradisplay", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+}
+
+
+/*
+ * MENU BAR
+ */
+$navWidth: 300px;
+$headerMargin: $navWidth + 40px;
+/* wrappers */
+.blog-masthead {
+    border: 1px solid $blue;
+    background: $backgroundGrey;
+}
+@media (min-width: $desktop) {
+    .container {
+        width: 970px;
+    }
+    .blog-masthead {
+        border: 1px solid $blue;
+        background: $backgroundGrey;
+        position: fixed;
+        left: 20px;
+        top: 20px;
+        width: $navWidth;
+        padding: 3px;
+        z-index: 1000;
+        text-align: center
+    }
+    .blog-masthead-wrapper {
+        border: 1px solid $blue;
+    }
+}
+
+
+/* headers */
+.blog-header {
+    padding-top: 20px;
+    padding-bottom: 0px;
+    text-align: center;
+}
+.blog-title {
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-size: 40px;
+    font-weight: normal;
+    text-decoration: none;
+}
+.blog-title-text {
+    color: $grey;
+    text-decoration: none;
+}
+.blog-title-text:hover {
+    text-decoration: none;
+    color: $blue;
+}
+.blog-description {
+    @extend .gothamlight;
+    font-size: 14px;
+    color: $grey;
+}
+.link {
+    @extend .gothambold;
+    padding: 10px;    
+    font-size: 13px;
+}
+
+/* Nav links */
+.nav li {
+    border-top: $blue solid 1px;
+    width: 48px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.nav li a {
+    color: $grey;
+    @extend .link;
+    position: relative;
+    display: inline-block;
+    font-weight: 500;
+    width: $navWidth;
+    text-align: center;
+    margin-left: -126px;
+}
+.current_page_item a {
+    color: $blue !important;
+}
+.nav li:hover,
+.nav :hover,
+.nav li a:hover,
+{
+    color: $blue;
+    text-decoration: none;
+    background-color: rgba(0,0,0,0);
+}
+.blog-lease-now {
+    @extend .link;
+    background-color: $blue;
+    @extend .neutradisplay;
+    width: 100%;
+    border-radius: 0;
+    color: white;   
+    font-size: 20px;
+}
+.blog-lease-now:hover {
+    background-color: $backgroundGrey;
+    color: $blue;
+    border: $blue solid 1px;
+    
+}
+.menu-btn {
+    display: none;
+}
+.post-cta-wrapper {
+    width: 100%;
+    margin: auto;
+    max-width: $navWidth - 4;
+}
+.post-cta {
+    @extend .blog-lease-now;
+    max-width: $navWidth - 4;
+    max-height: 50px;
+    margin: auto;
+    a {
+        width: 100%;
+        height: 100%;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+}
+@media screen and (max-width: $desktop) {
+    .nav {
+        display: none;
+    }
+    .menu-btn:hover {
+        color: white;
+        text-decoration: none;
+        background-color: $blue;
+    }
+    .menu-btn {
+        display: inline-block;
+        width: 100%;
+        height: 48px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: $blue;
+        color: white;
+        font-size: 19px;
+        line-height: 48px;
+        margin-bottom: 1px;
+    }
+}
+
+
+
+/*
+ * Blog posts
+ */
+.wp-caption {
+    @extend .white;
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.caption-in-view {
+    width: auto; height: auto;
+    background-size: 200% 100%;
+    background-image: linear-gradient(to right, rgba(0,0,0,0) 50%,  $backgroundBlue 50%);
+    -webkit-transition: background-position 1s;
+    -moz-transition: background-position 1s;
+    transition: background-position 1s;
+    background-position: -100%;
+}
+.wp-caption-text {
+    bottom: 20px;
+    left: 20px;
+    position: absolute;
+    text-align: left;
+}
+.cap-header {
+    font-size: 40px;
+}
+.cap-footer {
+    font-size: 30px
+}
+@media (min-width: $desktop) {
+    .wp-caption {
+        color: white;
+        // min-height: 100%;
+        min-width: 1024px;
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    .wp-caption-text {
+        bottom: 30px;
+        right: 30px;
+        position: absolute;
+        text-align: center;
+        left: $headerMargin;
+    }
+    .cap-header {
+        font-size: 100px;
+    }
+    .cap-footer {
+        font-size: 80px
+
+    }
+}
+.blog-post-wrapper {
+    color: $blue;
+    position: relative;
+    text-align: center;
+    background-color: $backgroundGrey;
+    border-top: white solid 1px;
+    padding: 5px;
+}
+.blog-post-meta {
+    margin-bottom: 0;
+}
+.blog-post-title {
+    margin-bottom: 0;
+    font-size: 40px;
+}
+.post-wrapper {
+    background-color: $backgroundGrey;
+    padding: 20px 20px 20px 20px;
+}
+.post-header {
+    font-size: 50px;
+    line-height: 45px;
+    margin-bottom: 11px;
+}
+.post-text {
+    margin-bottom: 20px;
+}
+.blog-post {
+    width: 100%;
+    height: 100%
+}
+.blog-post img {
+    // min-height: 100%;
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+@media (min-width: $desktop) {
+    .blog-post-wrapper {
+        padding: 0;
+        background-color: rgba(0,0,0,0);
+        color: white;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 10;
+        text-align: right;
+    }
+    .blog-post-title {
+        margin-bottom: 5px;
+        font-size: 40px;
+    }
+    .blog-post-meta {
+        margin-bottom: 20px;
+    }
+    .post-wrapper {
+        margin: 0;
+        padding: 80px 100px 80px $headerMargin;
+        background-color: $backgroundGrey;
+    }
+    .post-header {
+        font-size: 100px;
+        line-height: 90px;
+    }
+    .blog-post {
+        width: 100%;
+        height: 100%
+    }
+    .blog-post img {
+        min-height: 100%;
+        min-width: 1024px;
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+}
+
+
+
+.owl-carousel {
+    @extend .gothamlight;
+	position: relative;
+	height: 100vh;
+    background-color: black;
+	div:not(.owl-controls) {
+		height: 100%;
+	}
+    .item:hover .owl-carousel-item-imgoverlay {
+        background-color: rgba(0,0,0,0) !important;
+    }
+    img {
+        width: auto !important;
+        height: 100%;
+        min-height: 0;
+        min-width: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    @media (max-width: $desktop) {
+        img {
+           width: 100% !important;
+           height: auto;
+        }
+    }
+    
+    
+	
+	.owl-slide {
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+	}
+    $rmargin: 10px;
+    $bmargin: 10px;
+    $content-height: 50px;
+    .owl-carousel-item-imgoverlay {
+        text-shadow: none;
+    }
+    .owl-carousel-item-imgtitle {
+        background-color: $backgroundBlue;
+        font-size: $imgTitleSize;
+        height: 40px !important;
+        position: absolute;
+        right: $rmargin;
+        bottom: $content-height + $bmargin;
+    }
+    .owl-carousel-item-imgcontent {
+        background-color: $backgroundBlue;
+        font-size: $captionSize;
+        color: white;
+        position: absolute;
+        right: $rmargin;
+        bottom: $bmargin;
+        height: $content-height !important;
+    }
+	
+	.owl-controls {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right:0;
+		
+		.owl-buttons {
+			
+			.buttons {
+				position: absolute;
+				top:0;
+				bottom: 0;
+                display: inline-block;
+                zoom: 1;
+                margin: 0;
+				width: 50px;
+				height: 30px;
+				line-height: 25px;
+				text-align: center;
+                font-size: .9em;
+                border-radius: 3px;
+				color: $blue;
+                background: $backgroundGrey;
+                opacity: .9;
+				text-transform: capitalize;
+			} 
+			
+			.owl-prev {
+                @extend .buttons;
+				left: 5px;
+			}
+			.owl-next {
+                @extend .buttons;
+				right: 5px;
+			}
+		}
+	}
+}
+
+
+
+/*
+ * Footer
+ */
+
+.blog-footer {
+    padding: 40px 0;
+    color: $footerGrey;
+    text-align: center;
+    background-color: $blue;
+    border-top: 1px solid #e5e5e5;
+    a {
+        color: white;
+    }
+}
+.blog-footer p:last-child {
+    margin-bottom: 0;
+}
+
+

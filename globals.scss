@@ -1,0 +1,43 @@
+@font-face {
+    font-family: "neutradisplay";
+    src: url("fonts/NeutraText-LightAlt.ttf");
+}
+@font-face {
+    font-family: "gothambold";
+    src: url("fonts/gotham_bold.ttf");
+}
+@font-face {
+    font-family: "gothamlight";
+    src: url("fonts/gotham_light.ttf")
+}
+.header {
+    margin-top: 0;
+    font-family: "neutradisplay", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    color: #333;
+}
+.formfont {
+    font-family: "Helvetica Neue", "Times New Roman", Times, serif;
+}
+.gothambold {
+    font-family: "gothambold", Georgia, "Times New Roman", Times, serif;
+}
+.gothamlight {
+    font-family: "gothamlight", Georgia, "Times New Roman", Times, serif;
+}
+.neutradisplay {
+    font-family: "neutradisplay", Georgia, "Times New Roman", Times, serif;
+}
+.white {
+    font-color: white;
+    color: white;
+}
+$desktop: 1200px;
+$backgroundGrey: #F1F1F2;
+$grey: #7E7D7E;
+$blue: #419BBA;
+$captionSize: 20px;
+$imgTitleSize: 35px;
+$backgroundBlue: rgba(65, 155, 186, 0.6);
+$footerGrey: #c1c1c1;
+
