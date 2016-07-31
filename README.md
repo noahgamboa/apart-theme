@@ -10,6 +10,6 @@ This is my first shot at a wordpress theme so if you have comments or ideas abou
 
 basically looks like this:
 
-![alt tag](https://raw.githubusercontent.com/noahgamboa/apart-theme/screenshot.png)
+![alt tag](https://raw.githubusercontent.com/noahgamboa/apart-theme/blob/master/screenshot.png)
 
 
